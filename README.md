@@ -2,9 +2,9 @@
 
 
 # team member 
-z_one
-dr_hong
-soo_soo_man_man
-MJ
-GYE_C
+z_one\
+dr_hong\
+soo_soo_man_man\
+MJ\
+GYE_C\
 SnowyOwl
