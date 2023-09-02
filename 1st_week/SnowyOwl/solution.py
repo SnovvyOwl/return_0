@@ -13,9 +13,7 @@ def solution(participant, completion):
 
 
 #피로도
-
 from itertools import permutations
-
 def solution(k, dungeons):
     answer = 0
     count=0
@@ -32,3 +30,33 @@ def solution(k, dungeons):
         if count>answer:
             answer=count    
     return answer
+
+# 가장 큰수 (RUN TIME ERRor)
+from itertools import permutations
+def solution(numbers):
+    answer="0"
+    for per in permutations(numbers):
+        result = ''.join(str(s) for s in list(per))
+        if answer<result:
+            answer=result
+    return answer
+
+
+#H IDX
+def solution(citations):
+    citations.sort()
+    for i,h in enumerate(citations):
+        if h>=len(citations)-i:
+            return len(citations)-i
+    return 0
+
+#모음 사전
+from itertools import product
+def solution(word):
+    alpha = ["A","E","I","O","U"]
+    words=[]
+    for i in range(1,6):
+        for pro in product(alpha,repeat=i): # i가 1일때 하나만 2일때 2가지의 조합 3일때 3가지의 조합 4일때 4가지로 만들수 있는 조합을 출력 
+            words.append(''.join(list(pro)))
+    words.sort()
+    return words.index(word) + 1
