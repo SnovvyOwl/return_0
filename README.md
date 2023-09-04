@@ -5,6 +5,6 @@
 z_one\
 dr_hong\
 soo_soo_man_man\
-MJ[https://github.com/MNJIBAE]\
+[MJ](https://github.com/MNJIBAE)\
 GYE_C\
-SnowyOwl
+[SnowyOwl](https://snovvyowl.github.io/)
