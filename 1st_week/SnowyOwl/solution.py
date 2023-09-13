@@ -11,7 +11,6 @@ def solution(participant, completion):
     return hashed[hash_sum]
 
 
-
 #피로도
 from itertools import permutations
 def solution(k, dungeons):
@@ -50,3 +49,31 @@ def solution(citations):
             return len(citations)-i
     return 0
 
+# 베스트 앨범 에러
+
+def solution(genres, plays):
+    answer = []
+    album={}
+    first_genre=("",-1)
+    second_genre=("",-1)
+    for i,genre in enumerate(genres):
+        if genre in album:
+            album[genre].append([plays[i],i])       
+        else:
+            album[genre]=[[plays[i],i]]
+        if first_genre[0]=="":
+            first_genre=(genre,plays[i])
+        else:
+            if first_genre[0] is not genre:
+                if first_genre[1]<plays[i]:
+                    second_genre=first_genre
+                    first_genre=(genre,plays[i])
+                elif first_genre[1]==plays[i]:
+                     second_genre=first_genre
+    
+    album[first_genre[0]] = sorted(album[first_genre[0]], key=lambda x: x[0],reverse=True)
+    album[second_genre[0]] = sorted(album[second_genre[0]], key=lambda x: x[0],reverse=True)
+    answer=[album[first_genre[0]][0][1],album[first_genre[0]][1][1],album[second_genre[0]][0][1],album[second_genre[0]][1][1]]
+
+    
+    return answer
